@@ -1,0 +1,220 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>相関 &#8212; Notes  ドキュメント</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="Welcome to Notes&#39;s documentation!" href="index.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Notes&#39;s documentation!"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Notes  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <blockquote id="correlation">
+<div><div class="toctree-wrapper compound">
+</div>
+</div></blockquote>
+<div class="section" id="id1">
+<h1>相関<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<dl class="docutils">
+<dt>相関関係とは、</dt>
+<dd>2つのデータに対して、一方の値が大きいときに他方の値が大きいまたは小さいの関係を言う。
+相関関係は2つのデータがお互いに影響を与え合っている相互関連性である。</dd>
+</dl>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<div class="last line-block">
+<div class="line">相関関係に対して因果関係という関係があるが、因果関係は相関関係とは異なり、</div>
+<div class="line">一方のデータが他方のデータに影響を与えるような一方向性の関係である。</div>
+<div class="line">原因と結果の関係である。</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>データの種類について<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>相関関係を統計的に推定する場合、各データを確率変数とみなす。
+データには以下の3種類が考えられる。</p>
+<ul class="simple">
+<li>計量尺度</li>
+<li>順序尺度</li>
+<li>名義尺度</li>
+</ul>
+<div class="section" id="id3">
+<h3>計量尺度とは<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">実数で取得されるデータであり、連続値となる。</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>順序尺度とは<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">データに順序関係があるような離散データである。</div>
+<div class="line">例えば、「ゲームは好きか」という質問に対して回答が以下のような5段階のデータ。</div>
+<div class="line">好き・やや好き・どちらでもない・やや嫌い・嫌い</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>名義尺度とは<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">データに順序関係が存在しないような離散データである。</div>
+<div class="line">例えば、都道府県というデータでは東京都と大阪府には順序関係はない。</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>相関係数<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">上記の各種類のデータに対して、確率変数同士の相関関係の強さを表す値を相関係数という。</div>
+</div>
+<div class="section" id="id7">
+<h3>計量尺度×計量尺度<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">まず計量尺度同士の相関係数を求める方法について説明する。</div>
+<div class="line">計量尺度同士の相関係数はピアソンの積率相関係数を用いる。</div>
+<div class="line">ピアソンの積率相関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+</div>
+<div class="math">
+\[\begin{split}r &amp;=&amp; \frac{S_{xy}}{ \sqrt{S_{xx}S_{yy}} } \\
+S_{xx} &amp;=&amp; \sum_{i=1}^{n}(x_i-E(X))^2 \\
+S_{xy} &amp;=&amp; \sum_{i=1}^{n}(x_i-E(X))(y_i-E(Y)) \\
+(-1 \leq r \leq 1) \\\end{split}\]</div>
+<div class="line-block">
+<div class="line">このとき、各確率変数の関与率(寄与率)は相関係数 <span class="math">\(r\)</span> を用いて以下のように表される。</div>
+</div>
+<div class="math">
+\[\begin{split}r^{2} &amp;=&amp; \frac{S_{xy}}{S_{xx}S_{yy}} \\
+(0 \leq r^2 \leq 1) \\\end{split}\]</div>
+</div>
+<div class="section" id="id8">
+<h3>順序尺度×順序尺度<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">この場合はスピアマンの順位相関係数を用いる。</div>
+<div class="line">スピアマンの順位相関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+</div>
+<div class="math">
+\[\begin{split}r &amp;=&amp; \frac{S_{rxry}}{ \sqrt{S_{rxrx}S_{ryry}} } \\
+S_{rxrx} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))^2 \\
+S_{rxry} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))(r_{yi}-E(R_Y)) \\
+(-1 \leq r \leq 1) \\\end{split}\]</div>
+<div class="line-block">
+<div class="line">上記の数式はピアソンの積率相関係数を離散化された順序尺度に適用している。</div>
+<div class="line">他に順序尺度の相関を求める手法としてポリコリック相関係数 <a class="footnote-reference" href="#id11" id="id9">[1]</a> が存在する。</div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<div class="last line-block">
+<div class="line">ここで、順序尺度の相関と計量尺度の相関は数学的には本質が同じである。</div>
+<div class="line">しかし、科学的には別の意味を持つ事に注意。</div>
+<div class="line">ピアソンの積率相関係数とスピアマンの順位相関係数の違いについては</div>
+<div class="line">以下を参照。</div>
+<div class="line"><a class="reference external" href="http://www.snap-tck.com/room04/c01/stat/stat05/stat0503.html">http://www.snap-tck.com/room04/c01/stat/stat05/stat0503.html</a></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>名義尺度×名義尺度<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">この場合はクラメールの連関係数を用いる。</div>
+<div class="line">クラメールの連関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+</div>
+<div class="math">
+\[\begin{split}r^{2} &amp;=&amp; \frac{\chi_{0}}{N(s-1)} \\\end{split}\]</div>
+<div class="line-block">
+<div class="line">変数同士の独立性を検定している。</div>
+<div class="line"><span class="math">\(\chi^2\)</span> 検定については以下を参照。</div>
+<div class="line"><a class="reference external" href="https://bellcurve.jp/statistics/course/9496.html">https://bellcurve.jp/statistics/course/9496.html</a></div>
+</div>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[1]</a></td><td><a class="reference external" href="http://kosugitti.sakura.ne.jp/wp/wp-content/uploads/2013/08/polynote.pdf">http://kosugitti.sakura.ne.jp/wp/wp-content/uploads/2013/08/polynote.pdf</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="index.html"
+                        title="前の章へ">Welcome to Notes's documentation!</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="検索" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Notes&#39;s documentation!"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Notes  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, mahotox101500@gmail.com.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+    </div>
+  </body>
+</html>
