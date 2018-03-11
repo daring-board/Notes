@@ -143,6 +143,28 @@ S_{rxry} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))(r_{yi}-E(R_Y)) \\
 <div class="line">上記の数式はピアソンの積率相関係数を離散化された順序尺度に適用している。</div>
 <div class="line">他に順序尺度の相関を求める手法としてポリコリック相関係数 <a class="footnote-reference" href="#id11" id="id9">[1]</a> が存在する。</div>
 </div>
+<div class="section" id="polychoric-correlation">
+<h4>ポリコリック相関係数(Polychoric Correlation)<a class="headerlink" href="#polychoric-correlation" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">ポリコリック相関係数は順序尺度の相関に用いる事を想定しており、</div>
+<div class="line">背後に連続的な値があり、その値は正規分布に従うような値である事を仮定して考える。</div>
+</div>
+<p>変数 <span class="math">\(X, Y\)</span> について、以下を仮定する。</p>
+<div class="math">
+\[\begin{split}\rho &amp;:&amp; X, Y の相関係数 \\
+a_i, i \in \{ 1, 2, \cdots , s \} &amp;:&amp; Xに対するカテゴリの閾値 \\
+b_j, j \in \{ 1, 2, \cdots , r \} &amp;:&amp; Yに対するカテゴリの閾値 \\
+n_{ij} \in \mathcal{N}    &amp;:&amp; Xのカテゴリがi かつ Yのカテゴリがjのデータの度数 \\\end{split}\]</div>
+<p>上記の仮定の上で最尤推定法によって相関係数 <span class="math">\(\rho\)</span> を推定する。
+尤度方程式は以下となる。</p>
+<div class="math">
+\[\begin{split}L &amp;=&amp; C \prod_{i=1}^{s} \prod_{j=1}^{r} \pi_{ij}^{n_{ij}} \\\end{split}\]</div>
+<p>対数尤度関数に変換する。</p>
+<div class="math">
+\[\begin{split}l &amp;=&amp; \ln(C) + \sum_{i=1}^{s} \sum_{j=1}^{r} n_{ij} \ln(\pi_{ij}) \\\end{split}\]</div>
+<p>ここで、 <span class="math">\(\pi_{ij}\)</span> は以下で与えられる。</p>
+<div class="math">
+\[\pi_{ij} = \Phi_2(a_i, b_j) - \Phi_2(a_{i-1}, b_j) - \Phi_2(a_i, b_{j-1}) + \Phi_2(a_{i-1}, b_{j-1})\]</div>
 <div class="admonition attention">
 <p class="first admonition-title">注意</p>
 <div class="last line-block">
@@ -151,6 +173,7 @@ S_{rxry} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))(r_{yi}-E(R_Y)) \\
 <div class="line">ピアソンの積率相関係数とスピアマンの順位相関係数の違いについては</div>
 <div class="line">以下を参照。</div>
 <div class="line"><a class="reference external" href="http://www.snap-tck.com/room04/c01/stat/stat05/stat0503.html">http://www.snap-tck.com/room04/c01/stat/stat05/stat0503.html</a></div>
+</div>
 </div>
 </div>
 </div>
