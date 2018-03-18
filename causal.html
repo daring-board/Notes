@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>因果関係 &#8212; Notes  ドキュメント</title>
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="相関関係" href="correlation.html" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="correlation.html" title="相関関係"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Notes  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="toctree-wrapper compound" id="causal">
+</div>
+<div class="section" id="id1">
+<h1>因果関係<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<dl class="docutils">
+<dt>因果関係とは、</dt>
+<dd>2つの事象に対して、一方が原因でもう一方がその結果であるという関係である。</dd>
+</dl>
+<div class="section" id="id2">
+<h2>因果関係を推定する手法<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="did-difference-in-differences">
+<h3>差分の差分法(DID: Difference in differences)<a class="headerlink" href="#did-difference-in-differences" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>DID <a class="footnote-reference" href="#id6" id="id3">[1]</a> とは、</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">観測データによって実験的な研究を模倣するための統計手法である。</div>
+<div class="line">従属変数における説明変数の効果を、各カテゴリ群における従属変数の</div>
+<div class="line">時間を通じた平均的な変化とあるカテゴリ群における時間を通じた変化と</div>
+<div class="line">比較することで計算する。</div>
+</div>
+</div></blockquote>
+<div class="section" id="did">
+<h4>DIDで用いるモデル<a class="headerlink" href="#did" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="math">
+\[y_{ist} = \gamma_{s} + \lambda_{t} + \delta D_{st} + \epsilon_{ist}\]</div>
+<div class="math">
+\[\begin{split}t &amp;:&amp; 時刻 \\
+s &amp;:&amp; 説明変数 \\
+i &amp;:&amp; 個体ID \\
+y_{ist} &amp;:&amp; 個体iにs, tを所与したときの従属変数の観測値 \\
+\gamma_{s} &amp;:&amp; sの垂直的な切片 \\
+\lambda_{t} &amp;:&amp; tの垂直的な切片 \\
+\delta &amp;:&amp; 説明変数における処置効果 \\
+D_{st} &amp;:&amp; 処置状態を表すダミー変数 \\
+\epsilon_{ist} &amp;:&amp; 誤差項 \\\end{split}\]</div>
+</div>
+<div class="section" id="id4">
+<h4>算出方法<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> とし、説明変数の各値に対して、個体数を <span class="math">\(n\)</span> とする。</div>
+<div class="line">このとき、 時刻 <span class="math">\(t\)</span> において、従属変数の観測値の平均を以下とする。</div>
+</div>
+<div class="math">
+\[\overline{y}_{st} = \frac{1}{n}\sum_{i=1}^{n}y_{ist}\]</div>
+<div class="line-block">
+<div class="line">説明変数 <span class="math">\(s\)</span> の各カテゴリ群に対して、 <span class="math">\(\overline{y}_{1t}, \overline{y}_{2t}\)</span> を得る。</div>
+<div class="line">更に、時刻 <span class="math">\(t+1\)</span> まで進めたとき、説明変数 <span class="math">\(s\)</span> に対して、 <span class="math">\(\overline{y}_{1t+1}, \overline{y}_{2t+1}\)</span> を得る。</div>
+<div class="line">このとき、以下を求める事によって説明変数 <span class="math">\(s\)</span> が従属変数に与える効果を推定する。</div>
+</div>
+<div class="math">
+\[\begin{split}\hat{\delta} &amp;=&amp; (\overline{y}_{1t} - \overline{y}_{1t+1}) - (\overline{y}_{2t} - \overline{y}_{2t+1}) \\
+&amp;=&amp; \delta(\overline{D}_{11} - \overline{D}_{12}) + \delta(\overline{D}_{22} - \overline{D}_{21}) + \overline{\epsilon}_{11} - \overline{\epsilon}_{12} + \overline{\epsilon}_{22} - \overline{\epsilon}_{21}\end{split}\]</div>
+</div>
+<div class="section" id="id5">
+<h4>算出結果の解釈<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="line-block">
+<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> の分類に対して、以下とする。</div>
+<div class="line"><span class="math">\(s=1\)</span> のとき、処置Aを行う。</div>
+<div class="line"><span class="math">\(s=2\)</span> のとき、処置Aを行わない。</div>
+<div class="line">このとき、時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行うグループ( <span class="math">\(s=1\)</span> )に対して、</div>
+<div class="line">従属変数の観測された差分 <span class="math">\((\overline{y}_{1t} - \overline{y}_{1t+1})\)</span> と</div>
+<div class="line">時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行わないグループ( <span class="math">\(s=2\)</span> )に対して、</div>
+<div class="line">従属変数の観測された差分 <span class="math">\((\overline{y}_{2t} - \overline{y}_{2t+1})\)</span> を比較している。</div>
+<div class="line">DIDによって算出される値は、上記の2つのグループの変化量の比較結果に有意な差がみられるかどうかを検討するための値である言える。</div>
+</div>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://ja.wikipedia.org/wiki/差分の差分法">差分の差分法</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="correlation.html"
+                        title="前の章へ">相関関係</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="検索" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="correlation.html" title="相関関係"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Notes  ドキュメント</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, mahotox101500@gmail.com.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+    </div>
+  </body>
+</html>

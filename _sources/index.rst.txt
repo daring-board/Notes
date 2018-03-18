@@ -11,6 +11,7 @@ Welcome to Notes's documentation!
    :caption: Contents:
 
    correlation
+   causal
 
 Indices and tables
 ==================
