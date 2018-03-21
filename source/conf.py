@@ -51,8 +51,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Notes'
-copyright = '2018, mahotox101500@gmail.com'
-author = 'mahotox101500@gmail.com'
+copyright = '2018, https://www.facebook.com/mahoto.iwasa'
+author = 'https://www.facebook.com/mahoto.iwasa'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -144,7 +144,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Notes.tex', 'Notes Documentation',
-     'mahotox101500@gmail.com', 'manual'),
+     'https://www.facebook.com/mahoto.iwasa', 'manual'),
 ]
 
 
