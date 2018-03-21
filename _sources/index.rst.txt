@@ -12,6 +12,7 @@ Welcome to Notes's documentation!
 
    correlation
    causal
+   bayes
 
 Indices and tables
 ==================

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Welcome to Notes&#39;s documentation! &#8212; Notes  ドキュメント</title>
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -25,30 +25,26 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="相関関係" href="correlation.html" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
-
+    <link rel="next" title="相関関係" href="correlation.html" /> 
   </head>
   <body>
-
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>ナビゲーション</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="総合索引"
-             accesskey="I">索引</a></li>
-        <li class="right" >
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="#">Notes  ドキュメント</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="correlation.html" title="相関関係"
-             accesskey="N">次へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Notes  ドキュメント</a> &#187;</li> 
-      </ul>
-    </div>  
+             accesskey="N">次へ</a> |
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a>
+        </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -67,6 +63,13 @@
 <li class="toctree-l2"><a class="reference internal" href="causal.html#id2">因果関係を推定する手法</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bayes.html#likelihood-function">ベイズ推定と尤度関数(likelihood function)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bayes.html#predictive-distribution">予測分布(predictive distribution)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bayes.html#id2">1次元ガウス分布におけるベイズ推定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bayes.html#id4">多次元ガウス分布におけるベイズ推定</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -83,40 +86,56 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h4>次のトピックへ</h4>
-  <p class="topless"><a href="correlation.html"
-                        title="次の章へ">相関関係</a></p>
-<div id="searchbox" style="display: none" role="search">
-  <h3>クイック検索</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="検索" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
+        <div class="sidebar">
+          <h3>目次</h3>
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">検索</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="検索" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="clearer"></div>
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>ナビゲーション</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="総合索引"
-             >索引</a></li>
-        <li class="right" >
-          <a href="correlation.html" title="相関関係"
-             >次へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Notes  ドキュメント</a> &#187;</li> 
-      </ul>
-    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="correlation.html" title="相関関係"
+              >次へ</a> |
+            <a href="genindex.html" title="総合索引"
+              >索引</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/index.rst.txt"
+                rel="nofollow">ソースコードを表示</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, mahotox101500@gmail.com.
       このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>
