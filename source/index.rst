@@ -14,6 +14,8 @@ Welcome to Notes's documentation!
    causal
    bayes
 
+   https://arxiv.org/
+
 Indices and tables
 ==================
 
