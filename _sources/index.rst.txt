@@ -13,8 +13,7 @@ Welcome to Notes's documentation!
    correlation
    causal
    bayes
-
-   https://arxiv.org/
+   linear_regression
 
 Indices and tables
 ==================
