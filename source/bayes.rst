@@ -99,13 +99,10 @@
     p(\mu|D) &=& \mathcal{N}(\mu|\hat{m}, \hat{\sigma}^2) \\
              &=& \frac{1}{\sqrt{2\pi}\hat{\sigma}^2}\exp(\frac{(\mu-\hat{m})^2}{2\hat{\sigma}^2}) \\
 
-多次元ガウス分布におけるベイズ推定
+多次元ガウス分布
 ---------------------------------------
 
 n次元ガウス分布(Gaussian distribution, Normal distribution)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. math::
   \mathcal{N}(\boldsymbol{\mu}, \Sigma) = \frac{1}{\sqrt{2\pi}^n\sqrt{|\Sigma|}}\exp(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^{T}\Sigma^{-1}(\boldsymbol{x}-\boldsymbol{\mu}))
-
-平均が未知パラメータの場合
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
