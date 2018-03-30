@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>相関関係 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -27,8 +19,7 @@
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="因果関係" href="causal.html" />
     <link rel="prev" title="Welcome to Notes&#39;s documentation!" href="index.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
@@ -113,17 +104,17 @@
 <div class="line-block">
 <div class="line">まず計量尺度同士の相関係数を求める方法について説明する。</div>
 <div class="line">計量尺度同士の相関係数はピアソンの積率相関係数を用いる。</div>
-<div class="line">ピアソンの積率相関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+<div class="line">ピアソンの積率相関係数は以下の数式で表される値 <span class="math notranslate">\(r\)</span> である。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}r &amp;=&amp; \frac{S_{xy}}{ \sqrt{S_{xx}S_{yy}} } \\
 S_{xx} &amp;=&amp; \sum_{i=1}^{n}(x_i-E(X))^2 \\
 S_{xy} &amp;=&amp; \sum_{i=1}^{n}(x_i-E(X))(y_i-E(Y)) \\
 (-1 \leq r \leq 1) \\\end{split}\]</div>
 <div class="line-block">
-<div class="line">このとき、各確率変数の関与率(寄与率)は相関係数 <span class="math">\(r\)</span> を用いて以下のように表される。</div>
+<div class="line">このとき、各確率変数の関与率(寄与率)は相関係数 <span class="math notranslate">\(r\)</span> を用いて以下のように表される。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}r^{2} &amp;=&amp; \frac{S_{xy}}{S_{xx}S_{yy}} \\
 (0 \leq r^2 \leq 1) \\\end{split}\]</div>
 </div>
@@ -131,9 +122,9 @@ S_{xy} &amp;=&amp; \sum_{i=1}^{n}(x_i-E(X))(y_i-E(Y)) \\
 <h3>順序尺度×順序尺度<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">この場合はスピアマンの順位相関係数を用いる。</div>
-<div class="line">スピアマンの順位相関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+<div class="line">スピアマンの順位相関係数は以下の数式で表される値 <span class="math notranslate">\(r\)</span> である。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}r &amp;=&amp; \frac{S_{rxry}}{ \sqrt{S_{rxrx}S_{ryry}} } \\
 S_{rxrx} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))^2 \\
 S_{rxry} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))(r_{yi}-E(R_Y)) \\
@@ -148,23 +139,23 @@ S_{rxry} &amp;=&amp; \sum_{i=1}^{n}(r_{xi}-E(R_{X}))(r_{yi}-E(R_Y)) \\
 <div class="line">ポリコリック相関係数は順序尺度の相関に用いる事を想定しており、</div>
 <div class="line">背後に連続的な値があり、その値は正規分布に従うような値である事を仮定して考える。</div>
 </div>
-<p>変数 <span class="math">\(X, Y\)</span> について、以下を仮定する。</p>
-<div class="math">
+<p>変数 <span class="math notranslate">\(X, Y\)</span> について、以下を仮定する。</p>
+<div class="math notranslate">
 \[\begin{split}\rho &amp;:&amp; X, Y の相関係数 \\
 a_i, i \in \{ 1, 2, \cdots , s \} &amp;:&amp; Xに対するカテゴリの閾値 \\
 b_j, j \in \{ 1, 2, \cdots , r \} &amp;:&amp; Yに対するカテゴリの閾値 \\
 n_{ij} \in \mathcal{N}    &amp;:&amp; Xのカテゴリがi かつ Yのカテゴリがjのデータの度数 \\\end{split}\]</div>
-<p>上記の仮定の上で最尤推定法によって相関係数 <span class="math">\(\rho\)</span> を推定する。
+<p>上記の仮定の上で最尤推定法によって相関係数 <span class="math notranslate">\(\rho\)</span> を推定する。
 尤度方程式は以下となる。</p>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}L &amp;=&amp; C \prod_{i=1}^{s} \prod_{j=1}^{r} \pi_{ij}^{n_{ij}} \\\end{split}\]</div>
 <p>対数尤度関数に変換する。</p>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}l &amp;=&amp; \ln(C) + \sum_{i=1}^{s} \sum_{j=1}^{r} n_{ij} \ln(\pi_{ij}) \\\end{split}\]</div>
-<p>ここで、 <span class="math">\(\pi_{ij}\)</span> は以下で与えられる。</p>
-<div class="math">
+<p>ここで、 <span class="math notranslate">\(\pi_{ij}\)</span> は以下で与えられる。</p>
+<div class="math notranslate">
 \[\pi_{ij} = \Phi_2(a_i, b_j) - \Phi_2(a_{i-1}, b_j) - \Phi_2(a_i, b_{j-1}) + \Phi_2(a_{i-1}, b_{j-1})\]</div>
-<p>ただし、 <span class="math">\(\Phi_2(u, v)\)</span> は相関係数 <span class="math">\(\rho\)</span> の上での2次元正規分布関数である。</p>
+<p>ただし、 <span class="math notranslate">\(\Phi_2(u, v)\)</span> は相関係数 <span class="math notranslate">\(\rho\)</span> の上での2次元正規分布関数である。</p>
 <div class="admonition attention">
 <p class="first admonition-title">注意</p>
 <div class="last line-block">
@@ -181,13 +172,13 @@ n_{ij} \in \mathcal{N}    &amp;:&amp; Xのカテゴリがi かつ Yのカテゴ�
 <h3>名義尺度×名義尺度<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">この場合はクラメールの連関係数を用いる。</div>
-<div class="line">クラメールの連関係数は以下の数式で表される値 <span class="math">\(r\)</span> である。</div>
+<div class="line">クラメールの連関係数は以下の数式で表される値 <span class="math notranslate">\(r\)</span> である。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}r^{2} &amp;=&amp; \frac{\chi_{0}}{N(s-1)} \\\end{split}\]</div>
 <div class="line-block">
 <div class="line">変数同士の独立性を検定している。</div>
-<div class="line"><span class="math">\(\chi^2\)</span> 検定については以下を参照。</div>
+<div class="line"><span class="math notranslate">\(\chi^2\)</span> 検定については以下を参照。</div>
 <div class="line"><a class="reference external" href="https://bellcurve.jp/statistics/course/9496.html">https://bellcurve.jp/statistics/course/9496.html</a></div>
 </div>
 <table class="docutils footnote" frame="void" id="id11" rules="none">
@@ -255,7 +246,7 @@ n_{ij} \in \mathcal{N}    &amp;:&amp; Xのカテゴリがi かつ Yのカテゴ�
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>

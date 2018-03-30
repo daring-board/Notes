@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>因果関係 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -27,8 +19,7 @@
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="ベイズ推論" href="bayes.html" />
     <link rel="prev" title="相関関係" href="correlation.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
@@ -75,9 +66,9 @@
 </div></blockquote>
 <div class="section" id="did">
 <h4>DIDで用いるモデル<a class="headerlink" href="#did" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<div class="math">
+<div class="math notranslate">
 \[y_{ist} = \gamma_{s} + \lambda_{t} + \delta D_{st} + \epsilon_{ist}\]</div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}t &amp;:&amp; 時刻 \\
 s &amp;:&amp; 説明変数 \\
 i &amp;:&amp; 個体ID \\
@@ -91,30 +82,30 @@ D_{st} &amp;:&amp; 処置状態を表すダミー変数 \\
 <div class="section" id="id4">
 <h4>算出方法<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <div class="line-block">
-<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> とし、説明変数の各値に対して、個体数を <span class="math">\(n\)</span> とする。</div>
-<div class="line">このとき、 時刻 <span class="math">\(t\)</span> において、従属変数の観測値の平均を以下とする。</div>
+<div class="line">説明変数を <span class="math notranslate">\(s \in \{1, 2\}\)</span> とし、説明変数の各値に対して、個体数を <span class="math notranslate">\(n\)</span> とする。</div>
+<div class="line">このとき、 時刻 <span class="math notranslate">\(t\)</span> において、従属変数の観測値の平均を以下とする。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\overline{y}_{st} = \frac{1}{n}\sum_{i=1}^{n}y_{ist}\]</div>
 <div class="line-block">
-<div class="line">説明変数 <span class="math">\(s\)</span> の各カテゴリ群に対して、 <span class="math">\(\overline{y}_{1t}, \overline{y}_{2t}\)</span> を得る。</div>
-<div class="line">更に、時刻 <span class="math">\(t+1\)</span> まで進めたとき、説明変数 <span class="math">\(s\)</span> に対して、 <span class="math">\(\overline{y}_{1t+1}, \overline{y}_{2t+1}\)</span> を得る。</div>
-<div class="line">このとき、以下を求める事によって説明変数 <span class="math">\(s\)</span> が従属変数に与える効果を推定する。</div>
+<div class="line">説明変数 <span class="math notranslate">\(s\)</span> の各カテゴリ群に対して、 <span class="math notranslate">\(\overline{y}_{1t}, \overline{y}_{2t}\)</span> を得る。</div>
+<div class="line">更に、時刻 <span class="math notranslate">\(t+1\)</span> まで進めたとき、説明変数 <span class="math notranslate">\(s\)</span> に対して、 <span class="math notranslate">\(\overline{y}_{1t+1}, \overline{y}_{2t+1}\)</span> を得る。</div>
+<div class="line">このとき、以下を求める事によって説明変数 <span class="math notranslate">\(s\)</span> が従属変数に与える効果を推定する。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}\hat{\delta} &amp;=&amp; (\overline{y}_{1t} - \overline{y}_{1t+1}) - (\overline{y}_{2t} - \overline{y}_{2t+1}) \\
 &amp;=&amp; \delta(\overline{D}_{11} - \overline{D}_{12}) + \delta(\overline{D}_{22} - \overline{D}_{21}) + \overline{\epsilon}_{11} - \overline{\epsilon}_{12} + \overline{\epsilon}_{22} - \overline{\epsilon}_{21}\end{split}\]</div>
 </div>
 <div class="section" id="id5">
 <h4>算出結果の解釈<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <div class="line-block">
-<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> の分類に対して、以下とする。</div>
-<div class="line"><span class="math">\(s=1\)</span> のとき、処置Aを行う。</div>
-<div class="line"><span class="math">\(s=2\)</span> のとき、処置Aを行わない。</div>
-<div class="line">このとき、時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行うグループ( <span class="math">\(s=1\)</span> )に対して、</div>
-<div class="line">従属変数の観測された差分 <span class="math">\((\overline{y}_{1t} - \overline{y}_{1t+1})\)</span> と</div>
-<div class="line">時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行わないグループ( <span class="math">\(s=2\)</span> )に対して、</div>
-<div class="line">従属変数の観測された差分 <span class="math">\((\overline{y}_{2t} - \overline{y}_{2t+1})\)</span> を比較している。</div>
+<div class="line">説明変数を <span class="math notranslate">\(s \in \{1, 2\}\)</span> の分類に対して、以下とする。</div>
+<div class="line"><span class="math notranslate">\(s=1\)</span> のとき、処置Aを行う。</div>
+<div class="line"><span class="math notranslate">\(s=2\)</span> のとき、処置Aを行わない。</div>
+<div class="line">このとき、時刻 <span class="math notranslate">\(t\)</span> から時刻 <span class="math notranslate">\(t+1\)</span> の間に処置Aを行うグループ( <span class="math notranslate">\(s=1\)</span> )に対して、</div>
+<div class="line">従属変数の観測された差分 <span class="math notranslate">\((\overline{y}_{1t} - \overline{y}_{1t+1})\)</span> と</div>
+<div class="line">時刻 <span class="math notranslate">\(t\)</span> から時刻 <span class="math notranslate">\(t+1\)</span> の間に処置Aを行わないグループ( <span class="math notranslate">\(s=2\)</span> )に対して、</div>
+<div class="line">従属変数の観測された差分 <span class="math notranslate">\((\overline{y}_{2t} - \overline{y}_{2t+1})\)</span> を比較している。</div>
 <div class="line">DIDによって算出される値は、上記の2つのグループの変化量の比較結果に有意な差がみられるかどうかを検討するための値である言える。</div>
 </div>
 </div>
@@ -187,7 +178,7 @@ D_{st} &amp;:&amp; 処置状態を表すダミー変数 \\
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.0 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>
