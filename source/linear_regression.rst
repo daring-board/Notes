@@ -1,4 +1,4 @@
-.. linear_regression:
+.. _linear_regression:
 
 .. toctree::
   :maxdepth: 4

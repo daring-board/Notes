@@ -14,6 +14,7 @@ Welcome to Notes's documentation!
    causal
    bayes
    linear_regression
+   machine_learning1
 
 Indices and tables
 ==================
