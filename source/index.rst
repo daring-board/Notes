@@ -12,6 +12,8 @@ Welcome to Notes's documentation!
 
    correlation
    causal
+   pca
+   ica
    bayes
    linear_regression
    machine_learning1
