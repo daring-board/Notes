@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>検索 &#8212; Notes  ドキュメント</title>
+    <title>独立成分分析 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -15,22 +15,20 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="#" />
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-   
-
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="ベイズ推論" href="bayes.html" />
+    <link rel="prev" title="主成分分析" href="pca.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
           href="index.html">Notes  ドキュメント</a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="pca.html" title="主成分分析"
+             accesskey="P">前へ</a> |
+          <a href="bayes.html" title="ベイズ推論"
+             accesskey="N">次へ</a> |
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a>
         </div>
@@ -45,25 +43,43 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1 id="search-documentation">検索</h1>
-  <div id="fallback" class="admonition warning">
-  <script type="text/javascript">$('#fallback').hide();</script>
-  <p>
-    検索機能を使うには JavaScript を有効にしてください。
-  </p>
-  </div>
-  <p>
-    このページからドキュメントを検索できます。キーワードを下のボックスに入力して、「検索」をクリックしてください。入力された全てのキーワードを含むページが検索されます。一部のキーワードしか含まないページは検索結果に表示されないので注意してください。
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" value="" />
-    <input type="submit" value="検索" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="toctree-wrapper compound" id="ica">
+</div>
+<div class="section" id="id1">
+<h1>独立成分分析<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>本ページでは独立成分分析(Independent Component Analysis)について説明する。</p>
+<div class="section" id="id2">
+<h2>独立成分分析とは<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">　それぞれ独立な多数のシグナルによって、ある処理が行われたとき、</div>
+<div class="line">観測されるデータを互いに独立な成分に分離するための手法である。</div>
+<div class="line">ここで扱う独立成分分析では、確率分布に対する情報エントロピーによる</div>
+<div class="line">独立性を独立であることの定義に用いる。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>記法の準備<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">シグナルは <span class="math notranslate">\(n\)</span> 個が独立に発信されるものとし、</div>
+<div class="line">観測できるデータは <span class="math notranslate">\(m\)</span> 個であるとする。このとき、以下のように表す。</div>
+</div>
+</div></blockquote>
+<div class="math notranslate">
+\[\begin{split}\boldsymbol{s}(t) &amp;=&amp; (s_1(t), s_2(t), \cdots, s_n(t))^T &amp;:&amp; 独立なシグナル \\
+\boldsymbol{x}(t) &amp;=&amp; (x_1(t), x_2(t), \cdots, x_m(t))^T &amp;:&amp; 観測データ\end{split}\]</div>
+<p>また、シグナルと観測データの間には線形な関係があり、以下のように表せるものとする。</p>
+<div class="math notranslate">
+\[\begin{split}\boldsymbol{x}(t) = A\boldsymbol{s}(t)　\\
+A \in M(m, n) : m \times n 行列 \\\end{split}\]</div>
+</div>
+<div class="section" id="id4">
+<h2>独立性の定義<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+</div>
+
 
           </div>
         </div>
@@ -72,11 +88,16 @@
         <div class="sidebar">
           <h3>目次</h3>
           <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ica.html">独立成分分析</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">独立成分分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">独立成分分析とは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">記法の準備</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">独立性の定義</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linear_regression.html">線形回帰</a></li>
 <li class="toctree-l1"><a class="reference internal" href="machine_learning1.html">機械学習1</a></li>
@@ -84,7 +105,7 @@
 
           <div role="search">
             <h3 style="margin-top: 1.5em;">検索</h3>
-            <form class="search" action="#" method="get">
+            <form class="search" action="search.html" method="get">
                 <input type="text" name="q" />
                 <input type="submit" value="検索" />
                 <input type="hidden" name="check_keywords" value="yes" />
@@ -100,10 +121,17 @@
       <div class="footer">
         <div class="left">
           <div role="navigation" aria-label="related navigaton">
+            <a href="pca.html" title="主成分分析"
+              >前へ</a> |
+            <a href="bayes.html" title="ベイズ推論"
+              >次へ</a> |
             <a href="genindex.html" title="総合索引"
               >索引</a>
           </div>
           <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/ica.rst.txt"
+                rel="nofollow">ソースコードを表示</a>
           </div>
         </div>
 

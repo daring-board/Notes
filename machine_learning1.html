@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>検索 &#8212; Notes  ドキュメント</title>
+    <title>機械学習1 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -15,22 +15,17 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="#" />
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
-   
-
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="線形回帰" href="linear_regression.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
           href="index.html">Notes  ドキュメント</a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="linear_regression.html" title="線形回帰"
+             accesskey="P">前へ</a> |
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a>
         </div>
@@ -45,25 +40,40 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1 id="search-documentation">検索</h1>
-  <div id="fallback" class="admonition warning">
-  <script type="text/javascript">$('#fallback').hide();</script>
-  <p>
-    検索機能を使うには JavaScript を有効にしてください。
-  </p>
-  </div>
-  <p>
-    このページからドキュメントを検索できます。キーワードを下のボックスに入力して、「検索」をクリックしてください。入力された全てのキーワードを含むページが検索されます。一部のキーワードしか含まないページは検索結果に表示されないので注意してください。
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" value="" />
-    <input type="submit" value="検索" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="toctree-wrapper compound" id="machine-learning1">
+</div>
+<div class="section" id="id1">
+<h1>機械学習1<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>ランキング学習<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">本ページではランキング学習について述べる。</div>
+<div class="line">ランキング学習はクエリと検索対象群に対して、検索対象の順序付けを行う学習である。</div>
+</div>
+<div class="math notranslate">
+\[rank = f(q, T)\]</div>
+<div class="line-block">
+<div class="line">ここで、 <span class="math notranslate">\(q\)</span> はクエリであり、 <span class="math notranslate">\(T\)</span> は検索対象集合とする。</div>
+<div class="line">検索対象集合 <span class="math notranslate">\(T\)</span> の要素が1つで学習する場合、PairWiseなランキング学習といい、</div>
+<div class="line">検索対象集合 <span class="math notranslate">\(T\)</span> の要素が複数で学習する場合、ListWiseなランキング学習という。</div>
+<div class="line">ニューラルネットワークを用いたランキング学習にListNet <a class="footnote-reference" href="#id5" id="id3">[1]</a> とRankNet <a class="footnote-reference" href="#id6" id="id4">[2]</a> が存在する。</div>
+<div class="line"><br /></div>
+</div>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://qiita.com/koreyou/items/a69750696fd0b9d88608">ListNet</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td><a class="reference external" href="http://cympfh.cc/paper/ranknet.html">RankNet</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
 
           </div>
         </div>
@@ -72,19 +82,22 @@
         <div class="sidebar">
           <h3>目次</h3>
           <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ica.html">独立成分分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linear_regression.html">線形回帰</a></li>
-<li class="toctree-l1"><a class="reference internal" href="machine_learning1.html">機械学習1</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">機械学習1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">ランキング学習</a></li>
+</ul>
+</li>
 </ul>
 
           <div role="search">
             <h3 style="margin-top: 1.5em;">検索</h3>
-            <form class="search" action="#" method="get">
+            <form class="search" action="search.html" method="get">
                 <input type="text" name="q" />
                 <input type="submit" value="検索" />
                 <input type="hidden" name="check_keywords" value="yes" />
@@ -100,10 +113,15 @@
       <div class="footer">
         <div class="left">
           <div role="navigation" aria-label="related navigaton">
+            <a href="linear_regression.html" title="線形回帰"
+              >前へ</a> |
             <a href="genindex.html" title="総合索引"
               >索引</a>
           </div>
           <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/machine_learning1.rst.txt"
+                rel="nofollow">ソースコードを表示</a>
           </div>
         </div>
 

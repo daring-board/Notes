@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>因果関係 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -25,10 +17,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="ベイズ推論" href="bayes.html" />
+    <link rel="next" title="主成分分析" href="pca.html" />
     <link rel="prev" title="相関関係" href="correlation.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
@@ -36,7 +27,7 @@
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="correlation.html" title="相関関係"
              accesskey="P">前へ</a> |
-          <a href="bayes.html" title="ベイズ推論"
+          <a href="pca.html" title="主成分分析"
              accesskey="N">次へ</a> |
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a>
@@ -63,7 +54,7 @@
 <p>ここでは、因果関係を推定する手法について説明する。</p>
 <div class="section" id="id2">
 <h2>差分の差分法<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>差分の差分法(DID: Difference in differences) <a class="footnote-reference" href="#id9" id="id3">[1]</a> とは、</p>
+<p>差分の差分法(DID: Difference in differences) <a class="footnote-reference" href="#id12" id="id3">[1]</a> とは、</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line">観測データによって実験的な研究を模倣するための統計手法である。</div>
@@ -74,9 +65,9 @@
 </div></blockquote>
 <div class="section" id="did">
 <h3>DIDで用いるモデル<a class="headerlink" href="#did" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<div class="math">
+<div class="math notranslate">
 \[y_{ist} = \gamma_{s} + \lambda_{t} + \delta D_{st} + \epsilon_{ist}\]</div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}t &amp;:&amp; 時刻 \\
 s &amp;:&amp; 説明変数 \\
 i &amp;:&amp; 個体ID \\
@@ -90,30 +81,30 @@ D_{st} &amp;:&amp; 処置状態を表すダミー変数 \\
 <div class="section" id="id4">
 <h3>算出方法<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> とし、説明変数の各値に対して、個体数を <span class="math">\(n\)</span> とする。</div>
-<div class="line">このとき、 時刻 <span class="math">\(t\)</span> において、目的変数の観測値の平均を以下とする。</div>
+<div class="line">説明変数を <span class="math notranslate">\(s \in \{1, 2\}\)</span> とし、説明変数の各値に対して、個体数を <span class="math notranslate">\(n\)</span> とする。</div>
+<div class="line">このとき、 時刻 <span class="math notranslate">\(t\)</span> において、目的変数の観測値の平均を以下とする。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\overline{y}_{st} = \frac{1}{n}\sum_{i=1}^{n}y_{ist}\]</div>
 <div class="line-block">
-<div class="line">説明変数 <span class="math">\(s\)</span> の各カテゴリ群に対して、 <span class="math">\(\overline{y}_{1t}, \overline{y}_{2t}\)</span> を得る。</div>
-<div class="line">更に、時刻 <span class="math">\(t+1\)</span> まで進めたとき、説明変数 <span class="math">\(s\)</span> に対して、 <span class="math">\(\overline{y}_{1t+1}, \overline{y}_{2t+1}\)</span> を得る。</div>
-<div class="line">このとき、以下を求める事によって説明変数 <span class="math">\(s\)</span> が目的変数に与える効果を推定する。</div>
+<div class="line">説明変数 <span class="math notranslate">\(s\)</span> の各カテゴリ群に対して、 <span class="math notranslate">\(\overline{y}_{1t}, \overline{y}_{2t}\)</span> を得る。</div>
+<div class="line">更に、時刻 <span class="math notranslate">\(t+1\)</span> まで進めたとき、説明変数 <span class="math notranslate">\(s\)</span> に対して、 <span class="math notranslate">\(\overline{y}_{1t+1}, \overline{y}_{2t+1}\)</span> を得る。</div>
+<div class="line">このとき、以下を求める事によって説明変数 <span class="math notranslate">\(s\)</span> が目的変数に与える効果を推定する。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}\hat{\delta} &amp;=&amp; (\overline{y}_{1t} - \overline{y}_{1t+1}) - (\overline{y}_{2t} - \overline{y}_{2t+1}) \\
 &amp;=&amp; \delta(\overline{D}_{11} - \overline{D}_{12}) + \delta(\overline{D}_{22} - \overline{D}_{21}) + \overline{\epsilon}_{11} - \overline{\epsilon}_{12} + \overline{\epsilon}_{22} - \overline{\epsilon}_{21}\end{split}\]</div>
 </div>
 <div class="section" id="id5">
 <h3>算出結果の解釈<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">説明変数を <span class="math">\(s \in \{1, 2\}\)</span> の分類に対して、以下とする。</div>
-<div class="line"><span class="math">\(s=1\)</span> のとき、処置Aを行う。</div>
-<div class="line"><span class="math">\(s=2\)</span> のとき、処置Aを行わない。</div>
-<div class="line">このとき、時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行うグループ( <span class="math">\(s=1\)</span> )に対して、</div>
-<div class="line">目的変数の観測された差分 <span class="math">\((\overline{y}_{1t} - \overline{y}_{1t+1})\)</span> と</div>
-<div class="line">時刻 <span class="math">\(t\)</span> から時刻 <span class="math">\(t+1\)</span> の間に処置Aを行わないグループ( <span class="math">\(s=2\)</span> )に対して、</div>
-<div class="line">目的変数の観測された差分 <span class="math">\((\overline{y}_{2t} - \overline{y}_{2t+1})\)</span> を比較している。</div>
+<div class="line">説明変数を <span class="math notranslate">\(s \in \{1, 2\}\)</span> の分類に対して、以下とする。</div>
+<div class="line"><span class="math notranslate">\(s=1\)</span> のとき、処置Aを行う。</div>
+<div class="line"><span class="math notranslate">\(s=2\)</span> のとき、処置Aを行わない。</div>
+<div class="line">このとき、時刻 <span class="math notranslate">\(t\)</span> から時刻 <span class="math notranslate">\(t+1\)</span> の間に処置Aを行うグループ( <span class="math notranslate">\(s=1\)</span> )に対して、</div>
+<div class="line">目的変数の観測された差分 <span class="math notranslate">\((\overline{y}_{1t} - \overline{y}_{1t+1})\)</span> と</div>
+<div class="line">時刻 <span class="math notranslate">\(t\)</span> から時刻 <span class="math notranslate">\(t+1\)</span> の間に処置Aを行わないグループ( <span class="math notranslate">\(s=2\)</span> )に対して、</div>
+<div class="line">目的変数の観測された差分 <span class="math notranslate">\((\overline{y}_{2t} - \overline{y}_{2t+1})\)</span> を比較している。</div>
 <div class="line">DIDによって算出される値は、上記の2つのグループの変化量の比較結果に有意な差がみられるかどうかを検討するための値である言える。</div>
 </div>
 </div>
@@ -124,7 +115,7 @@ D_{st} &amp;:&amp; 処置状態を表すダミー変数 \\
 一方、実社会では実験的な手法は行えず、現行あるデータを用いることしかできない場合が多い。
 こういった状況で、手元にあるデータを使って因果関係(因果効果)を探るための手法を説明する。</p>
 <p>傾向スコアを説明する上での要素を整理する。</p>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}y_i &amp;:&amp; データiの目的変数 \\
 x_i &amp;:&amp; データiの説明変数 \\
 c_i &amp;:&amp; データiに関する共変量ベクトル \\\end{split}\]</div>
@@ -132,34 +123,61 @@ c_i &amp;:&amp; データiに関する共変量ベクトル \\\end{split}\]</div
 <div class="line">共変量ベクトルは説明変数にも目的変数にも寄与しており、それらの観測値に影響していると仮定する。</div>
 <div class="line">傾向スコアの前に因果効果について説明する。</div>
 <div class="line">因果効果とは、説明変数が目的変数に対して与える影響である。</div>
-<div class="line">データiに対して説明変数 <span class="math">\(x_{t-1i}\)</span> から <span class="math">\(x_{ti}\)</span> に変化したときの目的変数の変化量 <span class="math">\(y_{ti} - y_{t-1i}\)</span> を因果効果とする。</div>
+<div class="line">データiに対して説明変数 <span class="math notranslate">\(x_{t-1i}\)</span> から <span class="math notranslate">\(x_{ti}\)</span> に変化したときの目的変数の変化量 <span class="math notranslate">\(y_{ti} - y_{t-1i}\)</span> を因果効果とする。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[y_{ti} - y_{t-1i} = f(x_{ti}-x_{t-1i}| c_i=c)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <div class="last line-block">
-<div class="line">定義文には明記しなかったが、 <span class="math">\(c_i\)</span> は共変量ベクトルで、説明変数にも目的変数にも影響を与えていると</div>
+<div class="line">定義文には明記しなかったが、 <span class="math notranslate">\(c_i\)</span> は共変量ベクトルで、説明変数にも目的変数にも影響を与えていると</div>
 <div class="line">仮定されるような変数群である。因果効果はこの共変量ベクトルが得られている条件下で与えられる値ということに注意しておく必要がある。</div>
 </div>
 </div>
 <div class="section" id="id8">
-<h3>傾向スコア <a class="footnote-reference" href="#id11" id="id7">[2]</a> とは<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>傾向スコア <a class="footnote-reference" href="#id14" id="id7">[2]</a> とは<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>観測した共変量が与えられている条件の下で、説明変数の観測値が
 得られる条件付き確率を傾向スコアという。</p>
-<div class="math">
+<div class="math notranslate">
 \[e_i = prob(x_i=x|c_i=c)\]</div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}e_i &amp;:&amp; 傾向スコア \\
 c_i &amp;:&amp; データiに関する共変量ベクトル \\
 x_i &amp;:&amp; データiの観測した説明変数 \\\end{split}\]</div>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
+</div>
+</div>
+<div class="section" id="id9">
+<h2>因果関係の探索<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>因果関係の探索手法として、LiNGAM(Linear non-Gausian acyclic model)を説明する。
+その準備として、因果グラフと構造方程式を定義する。</p>
+<div class="section" id="id10">
+<h3>因果グラフ<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>因果関係は原因と結果という一方向性を持つ構造として表現可能である。
+また、因果関係には原因1から結果1、その結果1が原因2となり別の結果2を生み出す連鎖が考えられるが、
+元の原因1が発起する原因が結果2であるというような巡回が発生することは不自然である。
+この仮定のもと因果関係を表現する方法としてDAG(Directed Acyclic Graph)を使用する。</p>
+<dl class="docutils">
+<dt>因果グラフ(DAG)とは、</dt>
+<dd>因果関係の因子をVertexとし、原因と結果の関係にあるVertexの対をEdgeとしたGraph構造である。
+また、Edgeには方向が定義され、巡回するパスを持たない。
+形式的には以下のように記述される。</dd>
+</dl>
+<div class="math notranslate">
+\[\begin{split}DAG &amp;=&amp; (V, E) \\
+V &amp;:&amp; 因子全体の集合 \\
+E = V \times V &amp;:&amp; 因果関係の集合 \\\end{split}\]</div>
+</div>
+<div class="section" id="id11">
+<h3>構造方程式<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>LiNGAM
+<a class="reference external" href="https://www.slideshare.net/sshimizu2006/sshimizu-mathcooptalk-finalweb">https://www.slideshare.net/sshimizu2006/sshimizu-mathcooptalk-finalweb</a></p>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://ja.wikipedia.org/wiki/差分の差分法">差分の差分法</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
+<table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id7">[2]</a></td><td><a class="reference external" href="http://takehiko-i-hayashi.hatenablog.com/entry/20120427/1335475881">傾向スコア</a></td></tr>
@@ -182,10 +200,14 @@ x_i &amp;:&amp; データiの観測した説明変数 \\\end{split}\]</div>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">因果関係</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">差分の差分法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id6">傾向スコアによる手法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">因果関係の探索</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ica.html">独立成分分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linear_regression.html">線形回帰</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning1.html">機械学習1</a></li>
 </ul>
 
           <div role="search">
@@ -208,7 +230,7 @@ x_i &amp;:&amp; データiの観測した説明変数 \\\end{split}\]</div>
           <div role="navigation" aria-label="related navigaton">
             <a href="correlation.html" title="相関関係"
               >前へ</a> |
-            <a href="bayes.html" title="ベイズ推論"
+            <a href="pca.html" title="主成分分析"
               >次へ</a> |
             <a href="genindex.html" title="総合索引"
               >索引</a>
@@ -224,7 +246,7 @@ x_i &amp;:&amp; データiの観測した説明変数 \\\end{split}\]</div>
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>

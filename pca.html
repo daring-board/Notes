@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>主成分分析 &#8212; Notes  ドキュメント</title>
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="独立成分分析" href="ica.html" />
+    <link rel="prev" title="因果関係" href="causal.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">Notes  ドキュメント</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="causal.html" title="因果関係"
+             accesskey="P">前へ</a> |
+          <a href="ica.html" title="独立成分分析"
+             accesskey="N">次へ</a> |
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="toctree-wrapper compound" id="pca">
+</div>
+<div class="section" id="id1">
+<h1>主成分分析<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>本ページでは主成分分析(Principal Component Analysis)について説明する。</p>
+<div class="section" id="id2">
+<h2>主成分分析とは<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">観測されたデータの相関のある多数の変数群から、データ全体のばらつきを</div>
+<div class="line">最もよく表現する相関のない少数の主成分と呼ばれる変数群を合成する手法である。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>性質<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">　主成分分析はその性質上、データの次元削減を行うために使用される事が多い。</div>
+<div class="line">主成分分析を行って得られる主成分はベクトルとして表され、<strong>主成分ベクトル</strong> と呼ぶ。</div>
+<div class="line">各主成分ベクトルは正規直交基底となるため、主成分ベクトル全体の集合は</div>
+<div class="line">観測データに対する固有空間を張る。</div>
+<div class="line">　この固有空間の上で、観測データの分散共分散行列は対角行列となる。</div>
+<div class="line">つまり、この固有空間の固有値は主成分ベクトルを軸とした観測データの分散である。</div>
+<div class="line">また、主成分ベクトルからなる固有空間は、観測データから得られる他の任意の</div>
+<div class="line">ベクトル空間上の固有値の最大値より大きい固有値を持つ。</div>
+<div class="line">　分散共分散行列が対角行列となるため、観測データ上で各主成分ベクトルは</div>
+<div class="line"><strong>無相関</strong> となる。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>手順<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">主成分分析では、観測データに対して</div>
+<div class="line"><strong>分散を最大にするような単位ベクトルを基底として持つ</strong></div>
+<div class="line">ようなベクトル空間を求める。その手続きは以下である。</div>
+</div>
+<ol class="arabic simple">
+<li>観測データの重心（平均値）を求める。</li>
+<li>重心を原点とするように観測データを平行移動する。</li>
+<li>平行移動した観測データの分散共分散行列を求める。</li>
+<li>分散が最大になるようなベクトル空間を求める。</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>目次</h3>
+          <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
+<li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">主成分分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">主成分分析とは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">性質</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">手順</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ica.html">独立成分分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_regression.html">線形回帰</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning1.html">機械学習1</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">検索</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="検索" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="causal.html" title="因果関係"
+              >前へ</a> |
+            <a href="ica.html" title="独立成分分析"
+              >次へ</a> |
+            <a href="genindex.html" title="総合索引"
+              >索引</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/pca.rst.txt"
+                rel="nofollow">ソースコードを表示</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2 で生成しました。
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

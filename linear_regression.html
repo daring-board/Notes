@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>線形回帰 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -25,9 +17,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="機械学習1" href="machine_learning1.html" />
     <link rel="prev" title="ベイズ推論" href="bayes.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
@@ -35,6 +27,8 @@
         <div class="rel" role="navigation" aria-label="related navigation">
           <a href="bayes.html" title="ベイズ推論"
              accesskey="P">前へ</a> |
+          <a href="machine_learning1.html" title="機械学習1"
+             accesskey="N">次へ</a> |
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a>
         </div>
@@ -49,7 +43,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound" id="linear-regression">
 </div>
 <div class="section" id="id1">
 <h1>線形回帰<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
@@ -58,22 +52,22 @@
 <div class="section" id="id3">
 <h3>モデル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">データ <span class="math">\(\boldsymbol{x_i} \in X\)</span> とラベルデータ <span class="math">\(y_i \in Y\)</span> に対して、</div>
-<div class="line">回帰係数 <span class="math">\(\boldsymbol{w}\)</span> を推定して、回帰を行う。ただし、データ数は <span class="math">\(n\)</span> とする。</div>
+<div class="line">データ <span class="math notranslate">\(\boldsymbol{x_i} \in X\)</span> とラベルデータ <span class="math notranslate">\(y_i \in Y\)</span> に対して、</div>
+<div class="line">回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> を推定して、回帰を行う。ただし、データ数は <span class="math notranslate">\(n\)</span> とする。</div>
 <div class="line">このときの回帰モデルは以下とする。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[y_i = \boldsymbol{w} \boldsymbol{x_i}+\epsilon_{i} ,~~~~~
 i \in \{1,2,\dots,n\}\]</div>
 </div></blockquote>
 <div class="line-block">
-<div class="line">ここで、 <span class="math">\(\epsilon_{i}\)</span> は定数項(誤差項)とする。</div>
-<div class="line">変数について、データ <span class="math">\(\boldsymbol{x_i}, \boldsymbol{w}\)</span> は <span class="math">\(m\)</span> 次元ベクトルであるが、</div>
-<div class="line"><span class="math">\(y_i\)</span> はスカラーである。</div>
+<div class="line">ここで、 <span class="math notranslate">\(\epsilon_{i}\)</span> は定数項(誤差項)とする。</div>
+<div class="line">変数について、データ <span class="math notranslate">\(\boldsymbol{x_i}, \boldsymbol{w}\)</span> は <span class="math notranslate">\(m\)</span> 次元ベクトルであるが、</div>
+<div class="line"><span class="math notranslate">\(y_i\)</span> はスカラーである。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}y_i \in \mathcal{R} ,~
 \boldsymbol{x_i} = \left(
   \begin{array}{c}
@@ -93,20 +87,20 @@ i \in \{1,2,\dots,n\}\]</div>
 \right) \in \mathcal{R^m}\end{split}\]</div>
 </div></blockquote>
 <div class="line-block">
-<div class="line">回帰係数 <span class="math">\(\boldsymbol{w}\)</span> の事前分布はガウス分布に従うものとし、以下のようにあらわす。</div>
+<div class="line">回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> の事前分布はガウス分布に従うものとし、以下のようにあらわす。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[p(\boldsymbol{w}) = \mathcal{N}(\boldsymbol{w}|\boldsymbol{m}, \Sigma)\]</div>
 </div></blockquote>
 </div>
 <div class="section" id="id4">
 <h3>モデルの学習<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">上記の記述の上で <span class="math">\(\boldsymbol{w}\)</span> を推定する。</div>
+<div class="line">上記の記述の上で <span class="math notranslate">\(\boldsymbol{w}\)</span> を推定する。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}p(\boldsymbol{w}|Y, X) &amp;=&amp; \frac{p(\boldsymbol{w})\prod_{i=1}^{n}p(y_i|\boldsymbol{x}_i, \boldsymbol{w})}{p(Y|X)} \\
 &amp;\propto&amp; p(\boldsymbol{w})\prod_{i=1}^{n}p(y_i|\boldsymbol{x}_i, \boldsymbol{w}) \\\end{split}\]</div>
 </div></blockquote>
@@ -114,7 +108,7 @@ i \in \{1,2,\dots,n\}\]</div>
 <div class="line">対数をとる。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}\ln p(\boldsymbol{w}|Y, X) &amp;=&amp; \ln p(\boldsymbol{w})\prod_{i=1}^{n}p(y_i|\boldsymbol{x}_i, \boldsymbol{w}) \\
 &amp;=&amp; \ln \mathcal{N}(\boldsymbol{w}|\boldsymbol{m},\Sigma) + \sum_{i=1}^{n} \ln \mathcal{N}(y_i|\mathcal{w}^T\mathcal{x}_i, \sigma^2) \\
 &amp;=&amp; -\frac{1}{2}(\boldsymbol{w}-\boldsymbol{m})^{T}\Sigma^{-1}(\boldsymbol{w}-\boldsymbol{m}) + \sum_{i=1}^{n} \ln \mathcal{N}(y_i|\mathcal{w}^T\mathcal{x}_i, \sigma^2)  + const^{'} \\\end{split}\]</div>
@@ -123,16 +117,16 @@ i \in \{1,2,\dots,n\}\]</div>
 <div class="line">ここで、共分散行列は対称行列であるため、以下のように変形できる。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}&amp;=&amp; -\frac{1}{2}(\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{w}-2\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{m})+\sum_{i=1}^{n} \ln \mathcal{N}(y_i|\mathcal{w}^T\mathcal{x}_i, \sigma^2) + const^{''} \\
 &amp;=&amp; -\frac{1}{2}(\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{w}-2\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{m})+\sum_{i=1}^{n} \frac{1}{2\sigma^2}(y_i-\boldsymbol{w}^T\boldsymbol{x})^2 + const^{'''} \\
 &amp;=&amp; -\frac{1}{2}(\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{w}-2\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{m})+\sum_{i=1}^{n} \frac{1}{2\sigma^2}((\boldsymbol{w}^T\boldsymbol{x})^2-2\boldsymbol{w}^{T}\boldsymbol{x}_iy_i) + const \\\end{split}\]</div>
 </div></blockquote>
 <div class="line-block">
-<div class="line">更に、 <span class="math">\((\boldsymbol{w}^{T}\boldsymbol{x}_i)^2 = \boldsymbol{w}^{T}\boldsymbol{x}_i\boldsymbol{x}_i^{T}\boldsymbol{w}\)</span> より、以下を得る。</div>
+<div class="line">更に、 <span class="math notranslate">\((\boldsymbol{w}^{T}\boldsymbol{x}_i)^2 = \boldsymbol{w}^{T}\boldsymbol{x}_i\boldsymbol{x}_i^{T}\boldsymbol{w}\)</span> より、以下を得る。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}&amp;=&amp; -\frac{1}{2}(\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{w}-2\boldsymbol{w}^{T}\Sigma^{-1}\boldsymbol{m})+ \frac{1}{2\sigma^2} \sum_{i=1}^{n}(\boldsymbol{w}^{T}\boldsymbol{x}_i\boldsymbol{x}_i^{T}\boldsymbol{w}-2\boldsymbol{w}^{T}\boldsymbol{x}_iy_i) + const \\
 &amp;=&amp; -\boldsymbol{w}^{T}(\Sigma^{-1}\boldsymbol{m}+\sum_{i=1}^n\boldsymbol{x}_iy_i) - \frac{1}{2} \boldsymbol{w}^{T}(\Sigma^{-1}+\frac{1}{\sigma^2}(\sum_{i=1}^n \boldsymbol{x}_i\boldsymbol{x}_i^{T}))\boldsymbol{w} + const \\\end{split}\]</div>
 </div></blockquote>
@@ -140,16 +134,16 @@ i \in \{1,2,\dots,n\}\]</div>
 <div class="line">一方で、事後分布がガウス分布に従うことがわかっているので、以下が得られる。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}p(\boldsymbol{w}|Y, X) &amp;=&amp; \mathcal{N}(\boldsymbol{w}|\hat{\boldsymbol{m}}, \hat{\Sigma}) \\
 &amp;=&amp; -\frac{1}{2}(\boldsymbol{w}-\hat{\boldsymbol{m}})^{T}\hat{\Sigma}^{-1}(\boldsymbol{w}-\hat{\boldsymbol{m}}) + const^{'} \\
 &amp;=&amp; -\boldsymbol{w}^{T}\hat{\Sigma}^{-1}\hat{\boldsymbol{m}} -\frac{1}{2}\boldsymbol{w}^{T}\hat{\Sigma}^{-1}\hat{\boldsymbol{w}} + const \\\end{split}\]</div>
 </div></blockquote>
 <div class="line-block">
-<div class="line">したがって、以下を解くことによって <span class="math">\(\boldsymbol{w}\)</span> の事後分布を推定できる。</div>
+<div class="line">したがって、以下を解くことによって <span class="math notranslate">\(\boldsymbol{w}\)</span> の事後分布を推定できる。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}\hat{\boldsymbol{m}} &amp;=&amp; \hat{\Sigma}(\Sigma^{-1}\boldsymbol{m}+\sum_{i=1}^n\boldsymbol{x}_iy_i) \\
 \hat{\Sigma}^{-1} &amp;=&amp; \Sigma^{-1}+\frac{1}{\sigma^2}(\sum_{i=1}^n \boldsymbol{x}_i\boldsymbol{x}_i^{T}) \\\end{split}\]</div>
 </div></blockquote>
@@ -157,30 +151,30 @@ i \in \{1,2,\dots,n\}\]</div>
 <div class="section" id="id5">
 <h3>学習後のモデルによる予測<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">予測データ <span class="math">\(x^*\)</span> が与えられたときに、ラベル <span class="math">\(y^*\)</span> の値を予測したい。</div>
-<div class="line">このとき、学習データ <span class="math">\(X, Y\)</span> に対して、予測データ <span class="math">\(x^*\)</span> のラベルが <span class="math">\(y^*\)</span> として</div>
+<div class="line">予測データ <span class="math notranslate">\(x^*\)</span> が与えられたときに、ラベル <span class="math notranslate">\(y^*\)</span> の値を予測したい。</div>
+<div class="line">このとき、学習データ <span class="math notranslate">\(X, Y\)</span> に対して、予測データ <span class="math notranslate">\(x^*\)</span> のラベルが <span class="math notranslate">\(y^*\)</span> として</div>
 <div class="line">得られる確率を求めればよい。また、その確率は以下のように表される。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[p(y^*|\boldsymbol{x}^*, Y, X)\]</div>
 </div></blockquote>
 <dl class="docutils">
-<dt>ここまでの議論で、回帰係数 <span class="math">\(\boldsymbol{w}\)</span> の事前分布は以下を仮定し、</dt>
-<dd><div class="first last math">
+<dt>ここまでの議論で、回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> の事前分布は以下を仮定し、</dt>
+<dd><div class="first last math notranslate">
 \[p(\boldsymbol{w}) = \mathcal{N}(\boldsymbol{w}|\boldsymbol{m}, \Sigma)\]</div>
 </dd>
-<dt>回帰係数 <span class="math">\(\boldsymbol{w}\)</span> の事後分布として以下を得ている。</dt>
-<dd><div class="first last math">
+<dt>回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> の事後分布として以下を得ている。</dt>
+<dd><div class="first last math notranslate">
 \[p(\boldsymbol{w}|Y, X) = \mathcal{N}(\boldsymbol{w}|\hat{\boldsymbol{m}}, \hat{\Sigma})\]</div>
 </dd>
 </dl>
 <div class="line-block">
-<div class="line">このとき、回帰係数 <span class="math">\(\boldsymbol{w}\)</span> が事前分布に従うと仮定した上で</div>
-<div class="line">予測データ <span class="math">\(x^*\)</span> のラベルが <span class="math">\(y^*\)</span> として得られる確率を求める。</div>
+<div class="line">このとき、回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> が事前分布に従うと仮定した上で</div>
+<div class="line">予測データ <span class="math notranslate">\(x^*\)</span> のラベルが <span class="math notranslate">\(y^*\)</span> として得られる確率を求める。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}p(w|y^*, \boldsymbol{x}^*) &amp;=&amp; \frac{p(\boldsymbol{w})p(y^*|\boldsymbol{x}^*, \boldsymbol{w})}{p(y^*|\boldsymbol{x}^*)} \\
 \ln p(y^*|\boldsymbol{x}^*) &amp;=&amp; \ln p(y^*|\boldsymbol{x}^*, \boldsymbol{w}) - \ln p(w|y^*, \boldsymbol{x}^*) + const \\\end{split}\]</div>
 </div></blockquote>
@@ -188,22 +182,22 @@ i \in \{1,2,\dots,n\}\]</div>
 <div class="line">計算はここまでの計算結果を利用すればよいので省略し、以下の結果を得る。</div>
 </div>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[p(y^*|\boldsymbol{x}^*) = \mathcal{N}(y^*|\mu^*, (\sigma^*)^2)\]</div>
 </div></blockquote>
 <dl class="docutils">
 <dt>ただし、</dt>
-<dd><div class="first last math">
+<dd><div class="first last math notranslate">
 \[\begin{split}\mu^* &amp;=&amp; \boldsymbol{m}^{T}\boldsymbol{x}^* \\
 (\sigma^*)^2 &amp;=&amp; \sigma^2 + \boldsymbol{x}^{*T}\Sigma\boldsymbol{x}^* \\\end{split}\]</div>
 </dd>
 </dl>
 <div class="line-block">
-<div class="line">ここで、パラメータ <span class="math">\(\boldsymbol{m}, \Sigma\)</span> は回帰係数 <span class="math">\(\boldsymbol{w}\)</span> に</div>
+<div class="line">ここで、パラメータ <span class="math notranslate">\(\boldsymbol{m}, \Sigma\)</span> は回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> に</div>
 <div class="line">従うと仮定した場合の値である。</div>
-<div class="line">一方で、回帰係数 <span class="math">\(\boldsymbol{w}\)</span> が事後分布に従うと仮定した場合、以下のように表現される。</div>
+<div class="line">一方で、回帰係数 <span class="math notranslate">\(\boldsymbol{w}\)</span> が事後分布に従うと仮定した場合、以下のように表現される。</div>
 </div>
-<div class="math">
+<div class="math notranslate">
 \[\begin{split}p(y^*|\boldsymbol{x}^*, Y, X) &amp;=&amp; \mathcal{N}(y^*|\mu^*, (\sigma^*)^2)  \\
 \mu^* &amp;=&amp; \hat{\boldsymbol{m}}^{T}\boldsymbol{x}^* \\
 (\sigma^*)^2 &amp;=&amp; \sigma^2 + \boldsymbol{x}^{*T}\hat{\Sigma}\boldsymbol{x}^* \\\end{split}\]</div>
@@ -212,7 +206,7 @@ i \in \{1,2,\dots,n\}\]</div>
 <h3>モデルの評価<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>モデルの評価には以下のような周辺尤度を用いる。</p>
 <blockquote>
-<div><div class="math">
+<div><div class="math notranslate">
 \[\begin{split}p(Y|X) &amp;=&amp; \frac{p(\boldsymbol{w})\prod_{i=1}^{n}p(y_i|\boldsymbol{x}_i, \boldsymbol{w})}{p(\boldsymbol{w}|Y, X)} \\
 \ln p(Y|X) &amp;=&amp; -\frac{1}{2}\{ \frac{1}{\sigma^2}\sum_{i=1}^{n}y_i^2 + 2\ln\sigma + \ln2\pi + \boldsymbol{m}^{T}\Sigma\boldsymbol{m} - \ln|\Sigma| -  \hat{\boldsymbol{m}}^{T}\Sigma\hat{\boldsymbol{m}} + \ln|\hat{\Sigma}|\}\end{split}\]</div>
 </div></blockquote>
@@ -231,11 +225,14 @@ i \in \{1,2,\dots,n\}\]</div>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ica.html">独立成分分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">ベイズ推論</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">線形回帰</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">ベイズ推論に基づく線形回帰</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="machine_learning1.html">機械学習1</a></li>
 </ul>
 
           <div role="search">
@@ -258,6 +255,8 @@ i \in \{1,2,\dots,n\}\]</div>
           <div role="navigation" aria-label="related navigaton">
             <a href="bayes.html" title="ベイズ推論"
               >前へ</a> |
+            <a href="machine_learning1.html" title="機械学習1"
+              >次へ</a> |
             <a href="genindex.html" title="総合索引"
               >索引</a>
           </div>
@@ -272,7 +271,7 @@ i \in \{1,2,\dots,n\}\]</div>
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>
