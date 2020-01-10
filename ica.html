@@ -1,20 +1,19 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>独立成分分析 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="ベイズ推論" href="bayes.html" />
@@ -61,17 +60,13 @@
 </div>
 <div class="section" id="id3">
 <h2>記法の準備<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<blockquote>
-<div><div class="line-block">
-<div class="line">シグナルは <span class="math notranslate">\(n\)</span> 個が独立に発信されるものとし、</div>
-<div class="line">観測できるデータは <span class="math notranslate">\(m\)</span> 個であるとする。このとき、以下のように表す。</div>
-</div>
-</div></blockquote>
-<div class="math notranslate">
+<p>シグナルは <span class="math notranslate nohighlight">\(n\)</span> 個が独立に発信されるものとし、
+観測できるデータは <span class="math notranslate nohighlight">\(m\)</span> 個であるとする。このとき、以下のように表す。</p>
+<div class="math notranslate nohighlight">
 \[\begin{split}\boldsymbol{s}(t) &amp;=&amp; (s_1(t), s_2(t), \cdots, s_n(t))^T &amp;:&amp; 独立なシグナル \\
 \boldsymbol{x}(t) &amp;=&amp; (x_1(t), x_2(t), \cdots, x_m(t))^T &amp;:&amp; 観測データ\end{split}\]</div>
 <p>また、シグナルと観測データの間には線形な関係があり、以下のように表せるものとする。</p>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[\begin{split}\boldsymbol{x}(t) = A\boldsymbol{s}(t)　\\
 A \in M(m, n) : m \times n 行列 \\\end{split}\]</div>
 </div>
@@ -89,6 +84,7 @@ A \in M(m, n) : m \times n 行列 \\\end{split}\]</div>
           <h3>目次</h3>
           <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">序論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
@@ -108,8 +104,6 @@ A \in M(m, n) : m \times n 行列 \\\end{split}\]</div>
             <form class="search" action="search.html" method="get">
                 <input type="text" name="q" />
                 <input type="submit" value="検索" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
             </form>
           </div>
         </div>
@@ -139,7 +133,7 @@ A \in M(m, n) : m \times n 行列 \\\end{split}\]</div>
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>

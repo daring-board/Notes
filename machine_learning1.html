@@ -1,20 +1,19 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>機械学習1 &#8212; Notes  ドキュメント</title>
     <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="prev" title="線形回帰" href="linear_regression.html" /> 
@@ -50,27 +49,23 @@
 <div class="line">本ページではランキング学習について述べる。</div>
 <div class="line">ランキング学習はクエリと検索対象群に対して、検索対象の順序付けを行う学習である。</div>
 </div>
-<div class="math notranslate">
+<div class="math notranslate nohighlight">
 \[rank = f(q, T)\]</div>
 <div class="line-block">
-<div class="line">ここで、 <span class="math notranslate">\(q\)</span> はクエリであり、 <span class="math notranslate">\(T\)</span> は検索対象集合とする。</div>
-<div class="line">検索対象集合 <span class="math notranslate">\(T\)</span> の要素が1つで学習する場合、PairWiseなランキング学習といい、</div>
-<div class="line">検索対象集合 <span class="math notranslate">\(T\)</span> の要素が複数で学習する場合、ListWiseなランキング学習という。</div>
-<div class="line">ニューラルネットワークを用いたランキング学習にListNet <a class="footnote-reference" href="#id5" id="id3">[1]</a> とRankNet <a class="footnote-reference" href="#id6" id="id4">[2]</a> が存在する。</div>
+<div class="line">ここで、 <span class="math notranslate nohighlight">\(q\)</span> はクエリであり、 <span class="math notranslate nohighlight">\(T\)</span> は検索対象集合とする。</div>
+<div class="line">検索対象集合 <span class="math notranslate nohighlight">\(T\)</span> の要素が1つで学習する場合、PairWiseなランキング学習といい、</div>
+<div class="line">検索対象集合 <span class="math notranslate nohighlight">\(T\)</span> の要素が複数で学習する場合、ListWiseなランキング学習という。</div>
+<div class="line">ニューラルネットワークを用いたランキング学習にListNet <a class="footnote-reference brackets" href="#id5" id="id3">1</a> とRankNet <a class="footnote-reference brackets" href="#id6" id="id4">2</a> が存在する。</div>
 <div class="line"><br /></div>
 </div>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td><a class="reference external" href="https://qiita.com/koreyou/items/a69750696fd0b9d88608">ListNet</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td><a class="reference external" href="http://cympfh.cc/paper/ranknet.html">RankNet</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p><a class="reference external" href="https://qiita.com/koreyou/items/a69750696fd0b9d88608">ListNet</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p><a class="reference external" href="http://cympfh.cc/paper/ranknet.html">RankNet</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -83,6 +78,7 @@
           <h3>目次</h3>
           <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">序論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="correlation.html">相関関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="causal.html">因果関係</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca.html">主成分分析</a></li>
@@ -100,8 +96,6 @@
             <form class="search" action="search.html" method="get">
                 <input type="text" name="q" />
                 <input type="submit" value="検索" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
             </form>
           </div>
         </div>
@@ -129,7 +123,7 @@
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, https://www.facebook.com/mahoto.iwasa.
-      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2 で生成しました。
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0 で生成しました。
     </div>
         </div>
         <div class="clearer"></div>
