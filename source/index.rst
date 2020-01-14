@@ -11,6 +11,7 @@ Welcome to Notes's documentation!
    :caption: Contents:
 
    introduction
+   chapter2
    correlation
    causal
    pca
