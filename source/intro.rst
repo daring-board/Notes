@@ -12,6 +12,9 @@
 
 詳しくは、 Wikipedia_ を参照
 
+データサイエンスの目的
+-------------------------------
+
 要求されるスキル
 ------------------------------------
 データサイエンティストに必要なスキルは以下である。
@@ -36,19 +39,5 @@ http://www.datascientist.or.jp/dssjournal/
 上記の定義より、データサイエンス スキルの要素は以下である。
 
 - 情報処理スキル
-- 人工知能関連知識
 - 統計解析スキル
-
-
-
-
-機械学習とは
---------------------------
-機械学習については下記リンクで説明する。
-    https://daring-board.github.io/clustering_practice/index.html
-
-.. _Wikipedia: https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+- 人工知能関連知識
