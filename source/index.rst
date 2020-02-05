@@ -11,6 +11,9 @@
     :caption: Contents:
 
     intro
+    programing
+    statistics
+    artificial
 
 Indices and tables
 ==================
