@@ -39,5 +39,8 @@ http://www.datascientist.or.jp/dssjournal/
 上記の定義より、データサイエンス スキルの要素は以下である。
 
 - 情報処理スキル
-- 統計解析スキル
+- 統計解析(データ分析)スキル
 - 人工知能関連知識
+
+
+.. _Wikipedia: https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9
