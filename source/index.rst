@@ -11,9 +11,9 @@
     :caption: Contents:
 
     intro
-    programing
-    statistics
-    artificial
+    business
+    sience
+    engineering
 
 Indices and tables
 ==================
