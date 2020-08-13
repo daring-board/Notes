@@ -11,6 +11,8 @@ Welcome to Notes's documentation!
    :caption: Contents:
 
    introduction
+   albert_attention
+   integrated_gradients
    chapter2
    correlation
    causal
